@@ -1,0 +1,39 @@
+_repo: Westward-Ho--Or-The-Voyages-and-Adventures-of-Sir-Amyas-Leigh-Knight-of-Burrough-in-the-County__1860
+_version: 0.0.1
+creator:
+  author:
+    agent_name: Kingsley, Charles
+    aliases:
+    - Kingsley, C. (Charles)
+    - Kingley, Charles
+    birthdate: 1819
+    deathdate: 1875
+    gutenberg_agent_id: '344'
+    url: http://www.gutenberg.org/2009/agents/344
+    wikipedia: http://en.wikipedia.org/wiki/Charles_Kingsley
+description: "Westward Ho! is an 1855 British historical novel by Charles Kingsley.\
+  \ The novel was based on the adventures of Elizabethan corsair Amyas Preston (Amyas\
+  \ Leigh in the novel), who sets sail with Sir Francis Drake, Sir Walter Raleigh\
+  \ and other privateers to the New World, where they battle with the Spanish.\n From\
+  \ Wikipedia (CC BY-SA)."
+gutenberg_bookshelf: Historical Fiction
+gutenberg_issued: '2006-05-14'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '1860'
+  wikidata: Q7989800
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcc 'PR'
+- !lcsh 'Great Britain -- History -- Elizabeth, 1558-1603 -- Fiction'
+- GITenberg
+title: Westward Ho! Or, The Voyages and Adventures of Sir Amyas Leigh, Knight, of
+  Burrough, in the County of Devon, in the Reign of Her Most Glorious Majesty Queen
+  Elizabeth
+url: http://www.gutenberg.org/ebooks/1860
+wikipedia:
+- https://en.wikipedia.org/wiki/Westward_Ho!_(novel)
+- https://commons.wikimedia.org/wiki/Category:Westward_Ho!_(novel)
