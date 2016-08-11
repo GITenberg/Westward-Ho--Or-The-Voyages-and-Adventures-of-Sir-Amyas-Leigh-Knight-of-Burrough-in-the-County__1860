@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: e+t6TTvc8WMIQrzZMo1uO4EMBLUeX7KKx2/yPOwHwKg0SK3H1GnpikUYEWdz5mQZ5vN7FFvp4gpiz/e/S1lnsMtbgT3T7dItogfqqdr5CF0d4tP7LG3I4pVrfsAtHOTCxoWoFpbT1nr+66+G7ZrQ/CwaqbUZqq+6k6Uyc+AGpQAlmMVikuZo3NAiOyMD6tLlkbODBwfAgS/ShJs+gm59InbNkhDk8CC+nBkdjJ4XSVeDgUT0amMO/2gkqEhw4t0cvozjjczw9tr4gB4VxTbn2Jb4bdO7Zv2MUQ9ITSwu8xtBhLdgzd7hBxFl0dr9Q9hwVaOCdwHpcLGB41v9RoKiOzrgNQRawhB0WuCeZZBoT+60+5F5v6wTerFN2pXwrAWfwRZrFO/TMr9Y4cCbKy4HH/rawIa03+lWwRlMe6VMOAMBCBPKbZ93db3J2eSoXV9I9j2KwQUmtD5om3eTLGv3VIaAGopNMoahC46SkNcgMxpeVHe1XwJxY+M0AlDHkPSm+78K2fQFx1rCmX974CiXnOr/DEX/z18VlrcPAHyVpPdQ6rkYn1YkuHuei5gHUN/TlDL32r7La4Rz3hYIlO6fA4bQyC1ya6u86F1a3wa7AkW93b3wl39PslzOMuPWqi8A+upuwcMchgrhZ+rKfG4GyL/xZGF4AlDEbBhmsNeqjms=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Westward-Ho--Or-The-Voyages-and-Adventures-of-Sir-Amyas-Leigh-Knight-of-Burrough-in-the-County__1860
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
