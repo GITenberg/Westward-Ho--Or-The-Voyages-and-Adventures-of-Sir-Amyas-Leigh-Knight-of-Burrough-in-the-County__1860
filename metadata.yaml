@@ -1,5 +1,8 @@
 _repo: Westward-Ho--Or-The-Voyages-and-Adventures-of-Sir-Amyas-Leigh-Knight-of-Burrough-in-the-County__1860
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Kingsley, Charles
@@ -16,6 +19,8 @@ description: "Westward Ho! is an 1855 British historical novel by Charles Kingsl
   \ Leigh in the novel), who sets sail with Sir Francis Drake, Sir Walter Raleigh\
   \ and other privateers to the New World, where they battle with the Spanish.\n From\
   \ Wikipedia (CC BY-SA)."
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/1860#Westward-Ho--Or-The-Voyages-and-Adventures-of-Sir-Amyas-Leigh-Knight-of-Burrough-in-the-County_
 gutenberg_bookshelf: Historical Fiction
 gutenberg_issued: '2006-05-14'
 gutenberg_type: Text
